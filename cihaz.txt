@@ -1,0 +1,72 @@
+Cihaz Açılış Logları — Compex WPJ342 (OpenWrt)
+
+Bu belge, OpenWrt çalıştıran MIPS (Siyi HM30) tabanlı bir sistemin seri bağlantı üzerinden alınmış açılış loguna dayanarak oluşturulmuştur.
+
+---
+
+🖥️ Donanım Özeti
+
+- Kart Adı: Compex WPJ342
+- İşlemci: Atheros AR9342 (MIPS 74Kc, revizyon 3)
+- İşlemci Frekansı: 550 MHz
+- RAM: 64 MB (0x04000000 bayt)
+- Flash Bellek: 16 MB SPI NOR (Winbond w25q128)
+- Referans Kristal: 40 MHz
+- AHB Saat Hızı: 200 MHz
+- DDR Saat Hızı: 400 MHz
+- UART: ttyS0 @ 115200 baud
+
+---
+
+💾 Flash Bellek Bölümleri (MTD)
+
+- `u-boot`: 0x00000000 - 0x00030000 (Bootloader)
+- `firmware`: 0x00030000 - 0x00ff0000 (Çekirdek + RootFS)
+  - `kernel`: 0x00030000 - 0x001d0000 (Linux çekirdeği)
+  - `rootfs`: 0x001d0000 - 0x00ff0000 (Ana dosya sistemi - squashfs)
+  - `rootfs_data`: 0x00560000 - 0x00ff0000 (Yazılabilir kısım - overlay)
+- `art`: 0x00ff0000 - 0x01000000 (RF kalibrasyon verileri)
+
+---
+
+🧠 Yazılım Özeti
+
+- Bootloader: U-Boot
+- Açılış Uyarısı: bad CRC, varsayılan çevresel değişkenler kullanılıyor
+- İşletim Sistemi: OpenWrt
+- Kernel Sürümü: 4.14.149
+- Derleme Tarihi: 26 Ekim 2021
+- GCC Sürümü: 8.3.0
+- Derleyici Sistem: yang@ubuntu
+- Sıkıştırma: LZMA (çekirdek)
+- Dosya Sistemi: squashfs (okuma) + overlayfs (yazılabilir alan)
+
+---
+
+🔌 Ağ ve G/Ç Özellikleri
+
+- Ethernet: Atheros AG71xx
+- MAC Adresi: 00:03:7F:09:0B:AD
+- PCIe: PCIe uç birimi etkin
+- USB: EHCI denetleyicisi aktif
+- GPIO: gpio-button-hotplug aktif
+
+---
+
+🔐 Güvenlik ve Bellek
+
+- Bellek Koruması: MIPS mimarisi nedeniyle desteklenmiyor
+- JFFS2: Kullanılmıyor, squashfs + overlay yapısı tercih edilmiş
+
+---
+
+⚠️ Dikkat Edilmesi Gerekenler
+
+- U-Boot ortam değişkenleri bozuk veya boş:
+  > Warning: bad env CRC, using default
+- rootfs CRC uyarıları:
+  > jffs2: notice: wrong data CRC (overlay kullanıldığında normaldir)
+- Başlangıçta initrd yok:
+  > No initrd (beklenen durum)
+
+---
