@@ -1,0 +1,10 @@
+root@(none):/# cat /etc/shadow
+root:$1$LdZZRJwh$SZW.sXCIM7g2V9mWHWNt7/:18185:0:99999:7:::
+daemon:*:0:0:99999:7:::
+ftp:*:0:0:99999:7:::
+network:*:0:0:99999:7:::
+nobody:*:0:0:99999:7:::
+dnsmasq:x:0:0:99999:7:::
+admin:$1$B4SmlgJU$ZDzoOmQOZGS6nXkMr3.ou0:18816:0:99999:7:::
+dnsmasq:x:0:0:99999:7:::
+dnsmasq:x:0:0:99999:7:::
