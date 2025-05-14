@@ -1,0 +1,19 @@
+root@HD-Ground:~# df -h
+Filesystem                Size      Used Available Use% Mounted on
+/dev/root                 3.8M      3.8M         0 100% /rom
+tmpfs                    28.9M     64.0K     28.9M   0% /tmp
+/dev/mtdblock4           10.6M    560.0K     10.0M   5% /overlay
+overlayfs:/overlay       10.6M    560.0K     10.0M   5% /
+tmpfs                   512.0K         0    512.0K   0% /dev
+
+root@HD-Ground:~# mount
+/dev/root on /rom type squashfs (ro,relatime)
+proc on /proc type proc (rw,nosuid,nodev,noexec,noatime)
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,noatime)
+cgroup on /sys/fs/cgroup type cgroup (rw,nosuid,nodev,noexec,relatime,cpu,cpuacct,blkio,memory,devices,freezer,net_cls,pids)
+tmpfs on /tmp type tmpfs (rw,nosuid,nodev,noatime)
+/dev/mtdblock4 on /overlay type jffs2 (rw,noatime)
+overlayfs:/overlay on / type overlay (rw,noatime,lowerdir=/,upperdir=/overlay/upper,workdir=/overlay/work)
+tmpfs on /dev type tmpfs (rw,nosuid,relatime,size=512k,mode=755)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,mode=600,ptmxmode=000)
+debugfs on /sys/kernel/debug type debugfs (rw,noatime)
