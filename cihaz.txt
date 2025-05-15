@@ -14,7 +14,7 @@ Bu belge, OpenWrt çalıştıran MIPS (Siyi HM30) tabanlı bir sistemin seri ba�
 - Referans Kristal: 40 MHz
 - AHB Saat Hızı: 200 MHz
 - DDR Saat Hızı: 400 MHz
-- UART: ttyS0 @ 115200 baud
+- UART: ttyS0 @ 115200|230400 baud 
 
 ---
 

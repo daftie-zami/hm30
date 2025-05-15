@@ -1,0 +1,11 @@
+
+config datalink-cfg 'parameter0'
+	option HOSTIP '192.168.144.12'
+	option ANDROIDIP '192.168.144.20'
+	option MULTI_AIRCRAFT '192.168.144.13'
+	option DATALINKPORT '19856'
+	option MULTI_AIRCRAFT_PORT '10848'
+	option HOSTPORT '10847'
+	option DESTPORT '10846'
+	option DESTIP '192.168.144.11'
+

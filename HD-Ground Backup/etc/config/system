@@ -1,0 +1,28 @@
+
+config system
+	option hostname 'HD-Ground'
+	option ttylogin '0'
+	option log_size '64'
+	option urandom_seed '0'
+	option log_proto 'udp'
+	option zonename 'UTC'
+	option conloglevel '8'
+	option cronloglevel '5'
+
+config timeserver 'ntp'
+	option enabled '0'
+
+config led
+	option sysfs 'wpj342:yellow:sig2'
+	option trigger 'netdev'
+	list mode 'rx'
+	option name 'Wireless'
+	option dev 'wlan0'
+	option default '0'
+                   
+config led                     
+        option default '0'    
+        option name 'USB'               
+        option sysfs 'wpj342:green:sig4'
+        option trigger 'usbdev'         
+        option dev '1-1'

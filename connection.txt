@@ -1,0 +1,6 @@
+open cmd type:
+ssh -oHostKeyAlgorithms=+ssh-rsa root@192.168.144.12
+ssh-keygen -R 192.168.144.12
+
+copying file with ssh
+ssh -oHostKeyAlgorithms=+ssh-rsa root@192.168.144.12 "cat /usr/bin/uart_custom" > C:\Users\User\Desktop\uart_custom

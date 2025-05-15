@@ -1,0 +1,26 @@
+
+config interface 'loopback'
+	option ifname 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config globals 'globals'
+	option ula_prefix 'fd8b:96cd:2e2f::/48'
+
+config interface 'lan'
+	option type 'bridge'
+	option ifname 'eth0'
+	option proto 'static'
+	option ipaddr '192.168.144.12'
+	option netmask '255.255.255.0'
+	option delegate '0'
+	option force_link '0'
+	option macaddr '60:21:cf:78:eb:9a'
+
+config interface 'wan'
+	option ifname 'usb0'
+	option proto 'static'
+	option ipaddr '192.168.42.1'
+	option netmask '255.255.255.0'
+

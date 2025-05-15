@@ -1,0 +1,7 @@
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+
+#ping.sh >/dev/null &
+set_bit.sh >> /dev/null &
+set_usb_wifi.sh >> /dev/null &
+exit 0

@@ -1,0 +1,4 @@
+
+config board-cfg 'parameter0'
+	option BOARD_DEFINE 'SIYI_VIDEO_5_8G_WIFI'
+

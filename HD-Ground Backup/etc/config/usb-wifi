@@ -1,0 +1,4 @@
+
+config usb-wifi-cfg 'parameter0'
+	option DISABLE '0'
+
